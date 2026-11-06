@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@theme {
-    --color-secondary: navy;
-    --color-primary: #dddddd;
+
+body {
+  font-family: Arial, sans-serif;
 }

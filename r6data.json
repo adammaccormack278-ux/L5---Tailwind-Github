@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Sledge",
+    "role": "Breacher",
+    "motto": "Break the wall and push forward."
+  },
+  {
+    "name": "Ash",
+    "role": "Entry Operator",
+    "motto": "Fast entries and clean openings."
+  },
+  {
+    "name": "Jäger",
+    "role": "Defender",
+    "motto": "Stop the grenade before it hurts the team."
+  }
+]
