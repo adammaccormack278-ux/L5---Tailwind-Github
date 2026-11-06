@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "concurrently": "^10.0.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  },
+  "scripts": {
+    "watch:ts": "tsc --watch --preserveWatchOutput",
+    "watch:css": "tailwindcss -i ./input.css -o ./style.css --watch=always",
+    "watch": "concurrently -n TS,CSS -c blue,magenta \"npm:watch:ts\" \"npm:watch:css\""
+  }
+}
