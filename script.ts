@@ -4,12 +4,6 @@ type Operator = {
   motto: string;
 };
 
-const yearElement = document.querySelector('#year');
-
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear().toString();
-}
-
 fetch('r6data.json')
   .then((response) => response.json())
   .then((data: Operator[]) => {
@@ -21,21 +15,21 @@ fetch('r6data.json')
 
     data.forEach((operator) => {
       const card = document.createElement('div');
-      card.className = 'rounded-lg border border-red-500 bg-slate-800 p-4';
+      card.className = 'card';
 
-      const title = document.createElement('h2');
-      title.className = 'text-2xl font-bold text-red-300';
-      title.textContent = operator.name;
+      const name = document.createElement('h2');
+      name.className = 'name';
+      name.textContent = operator.name;
 
       const role = document.createElement('p');
-      role.className = 'mt-2 text-yellow-300';
+      role.className = 'role';
       role.textContent = 'Role: ' + operator.role;
 
       const motto = document.createElement('p');
-      motto.className = 'mt-2 text-slate-200';
+      motto.className = 'motto';
       motto.textContent = 'Motto: ' + operator.motto;
 
-      card.appendChild(title);
+      card.appendChild(name);
       card.appendChild(role);
       card.appendChild(motto);
       list.appendChild(card);
@@ -48,6 +42,6 @@ fetch('r6data.json')
       return;
     }
 
-    list.innerHTML = '<p class="text-red-400">Could not load operator data.</p>';
+    list.innerHTML = '<p class="error">Could not load operator data.</p>';
     console.error(error);
   });
